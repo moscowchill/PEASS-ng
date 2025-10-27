@@ -1605,10 +1605,10 @@ $Drives.Root | ForEach-Object {
 ######################## Registry Password Check ########################
 
 Write-Host -ForegroundColor Blue "=========|| Registry Password Check"
-# Looking through the entire registry for passwords
+# Registry search for sensitive data
 Write-Host "This will take some time. Won't you have a pepsi?"
 $regPath = @("registry::\HKEY_CURRENT_USER\", "registry::\HKEY_LOCAL_MACHINE\")
-# Search for the string in registry values and properties
+# Search registry for pattern matches
 foreach ($r in $regPath) {
 (Get-ChildItem -Path $r -Recurse -Force -ErrorAction SilentlyContinue) | ForEach-Object {
     $property = $_.property
@@ -1618,13 +1618,13 @@ foreach ($r in $regPath) {
       $regexSearch.keys | ForEach-Object {
         $value = $regexSearch[$_]
         if ($Prop | Where-Object { $_ -like $value }) {
-          Write-Host "Possible Password Found: $Name\$Prop"
+          Write-Host "Match discovered: $Name\$Prop"
           Write-Host "Key: $_" -ForegroundColor Red
         }
-        $Prop | ForEach-Object {   
+        $Prop | ForEach-Object {
           $propValue = (Get-ItemProperty "registry::$Name").$_
           if ($propValue | Where-Object { $_ -like $Value }) {
-            Write-Host "Possible Password Found: $name\$_ $propValue"
+            Write-Host "Match discovered: $name\$_ $propValue"
           }
         }
       }
