@@ -267,38 +267,6 @@ function Write-Color([String[]]$Text, [ConsoleColor[]]$Color) {
   }
   Write-Host
 }
-
-
-#Write-Color "    ((,.,/((((((((((((((((((((/,  */" -Color Green
-Write-Color ",/*,..*(((((((((((((((((((((((((((((((((," -Color Green
-Write-Color ",*/((((((((((((((((((/,  .*//((//**, .*((((((*" -Color Green
-Write-Color "((((((((((((((((", "* *****,,,", "\########## .(* ,((((((" -Color Green, Blue, Green
-Write-Color "(((((((((((", "/*******************", "####### .(. ((((((" -Color Green, Blue, Green
-Write-Color "(((((((", "/******************", "/@@@@@/", "***", "\#######\((((((" -Color Green, Blue, White, Blue, Green
-Write-Color ",,..", "**********************", "/@@@@@@@@@/", "***", ",#####.\/(((((" -Color Green, Blue, White, Blue, Green
-Write-Color ", ,", "**********************", "/@@@@@+@@@/", "*********", "##((/ /((((" -Color Green, Blue, White, Blue, Green
-Write-Color "..(((##########", "*********", "/#@@@@@@@@@/", "*************", ",,..((((" -Color Green, Blue, White, Blue, Green
-Write-Color ".(((################(/", "******", "/@@@@@/", "****************", ".. /((" -Color Green, Blue, White, Blue, Green
-Write-Color ".((########################(/", "************************", "..*(" -Color Green, Blue, Green
-Write-Color ".((#############################(/", "********************", ".,(" -Color Green, Blue, Green
-Write-Color ".((##################################(/", "***************", "..(" -Color Green, Blue, Green
-Write-Color ".((######################################(/", "***********", "..(" -Color Green, Blue, Green
-Write-Color ".((######", "(,.***.,(", "###################", "(..***", "(/*********", "..(" -Color Green, Green, Green, Green, Blue, Green
-Write-Color ".((######*", "(####((", "###################", "((######", "/(********", "..(" -Color Green, Green, Green, Green, Blue, Green
-Write-Color ".((##################", "(/**********(", "################(**...(" -Color Green, Green, Green
-Write-Color ".(((####################", "/*******(", "###################.((((" -Color Green, Green, Green
-Write-Color ".(((((############################################/  /((" -Color Green
-Write-Color "..(((((#########################################(..(((((." -Color Green
-Write-Color "....(((((#####################################( .((((((." -Color Green
-Write-Color "......(((((#################################( .(((((((." -Color Green
-Write-Color "(((((((((. ,(############################(../(((((((((." -Color Green
-Write-Color "  (((((((((/,  ,####################(/..((((((((((." -Color Green
-Write-Color "        (((((((((/,.  ,*//////*,. ./(((((((((((." -Color Green
-Write-Color "           (((((((((((((((((((((((((((/" -Color Green
-Write-Color "          by PEASS-ng & RandolphConley" -Color Green
-
-######################## VARIABLES ########################
-
 # Manually added Regex search strings from https://github.com/peass-ng/PEASS-ng/blob/master/build_lists/sensitive_files.yaml
 
 # Set these values to true to add them to the regex search by default
